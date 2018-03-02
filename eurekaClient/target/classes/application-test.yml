@@ -1,0 +1,43 @@
+server: 
+  port: 8762
+# 默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：  
+#   测试环境：java -jar my-spring-boot.jar --spring.profiles.active=test  
+#   生产环境：java -jar my-spring-boot.jar --spring.profiles.active=prod  
+spring:  
+  profiles:  
+    active: test  
+  
+---  
+# 开发环境配置  
+spring:  
+  profiles: dev  
+mysql:  
+  ipPort: localhost:3306  
+    
+---  
+# 测试环境配置  
+spring:  
+  profiles: test
+  application: 
+    name: service-hi        
+mysql:  
+  ipPort: 192.168.0.12:8066  
+    
+---  
+# 生产环境配置  
+spring: 
+  profiles: prod  
+mysql:  
+  ipPort: 192.168.0.13:8066 
+
+eureka:
+  server:
+    enable-self-preservation: false       # 关闭自我保护模式（缺省为打开）
+    eviction-interval-timer-in-ms: 1000   # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+    instance: 
+      hostname: localhost
+  client:
+    serviceUrl:
+      # 实际测试：若修改尾部的eureka为其它的，比如/myeureka，注册中心启动没问题，但服务端在注册时会失败
+      # 报告异常：com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

@@ -1,0 +1,4 @@
+com\springcloud\demo\ribbon\service\RibbonTestService.class
+com\springcloud\demo\ribbon\controller\RibbonController.class
+com\springcloud\demo\ribbon\ServerRibbonApp.class
+com\springcloud\demo\ribbon\conf\RibbonRestConf.class

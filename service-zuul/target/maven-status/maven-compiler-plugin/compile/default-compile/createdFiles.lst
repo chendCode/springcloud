@@ -1,0 +1,2 @@
+com\springCloud\service\zuul\ZuulServiceApp.class
+com\springCloud\service\zuul\filter\MyZuulFilter.class

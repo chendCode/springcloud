@@ -1,0 +1,30 @@
+server: 
+   port: 8770
+# 默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：  
+#   测试环境：java -jar my-spring-boot.jar --spring.profiles.active=test  
+#   生产环境：java -jar my-spring-boot.jar --spring.profiles.active=prod  
+spring:
+  profiles:  
+    active: dev
+  application: 
+    name: conf-server      
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chendCode/SpringClodeLeaning.git
+          searchPaths: SpringCloudConfCenter
+  rabbitmq: 
+     host: localhost
+     port: 5672
+     username: cd
+     password: 123456           
+
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka/ 
+#关闭bus验证        
+management: 
+  security: 
+     enabled: false        

@@ -1,0 +1,2 @@
+ribbon是Springcloud实现负载均衡的一种方式
+hystric断容器机避免了服务失败后请求堵塞的问题

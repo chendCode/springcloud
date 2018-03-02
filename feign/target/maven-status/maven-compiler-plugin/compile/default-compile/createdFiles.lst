@@ -1,0 +1,5 @@
+com\springcloud\feign\controller\FeignController.class
+com\springcloud\feign\conf\AppConf.class
+com\springcloud\feign\FeignServiceApp.class
+com\springcloud\feign\interfaces\FeignServiceTest.class
+com\springcloud\feign\hystricservice\FeignHystricService.class

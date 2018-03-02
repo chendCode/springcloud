@@ -1,0 +1,4 @@
+org\conf\client\ConfClientApp.class
+org\conf\client\config\MyTestBean.class
+org\conf\client\controller\ConfTestController.class
+org\conf\client\controller\ConfTest2Controller.class
